@@ -26,16 +26,16 @@ module.exports = async ({ config, mode }) => {
 
   // Add specific loader rule for CSS (SASS)
 
-  // config.module.rules.push({
-  //   test: /\.scss$/,
-  //   loaders: [
-  //     "style-loader",
-  //     "css-loader",
-  //     "sass-loader",
-  //   ],
-  //   exclude: /\.module\.scss$/,
-  //   include: path.resolve(__dirname, '../src')
-  // })
+  config.module.rules.push({
+    test: /\.scss$/,
+    loaders: [
+      "style-loader",
+      "css-loader",
+      "sass-loader",
+    ],
+    exclude: /\.module\.scss$/,
+    include: path.resolve(__dirname, '../src')
+  })
 
   // Return the altered config
 
