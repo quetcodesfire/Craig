@@ -4,21 +4,22 @@ import PropTypes from 'prop-types'
 const Button = ({
   children = 'Button', 
   className, 
-  to, 
+  href,
   onClick, 
   disabled = false, 
   type, 
-  buttonTag,
   ...props 
 } = {}) => {
+  let buttonTag = null
 
-  className = `${className}-button` || 'button'
+  className = `${className} button` || 'button'
   
   const attributes = {
+    className,
     children,
     disabled,
     onClick,
-    to
+    href
   };
 
   if(disabled) {
@@ -35,7 +36,7 @@ const Button = ({
     })
   }
 
-  if(!to || disabled) {
+  if(!href || disabled) {
     buttonTag = (
       <button {...attributes} {...props}>
         {children}
@@ -43,7 +44,7 @@ const Button = ({
     )
   } else {
     buttonTag = (
-      <button href={to} {...attributes} {...props}>
+      <button {...attributes} {...props}>
         {children}
       </button>
     )
@@ -54,6 +55,21 @@ const Button = ({
       {buttonTag}
     </span>
   )
+}
+
+Button.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node
+  ]),
+  type: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.string),
+    PropTypes.string
+  ]),
+  disable: PropTypes.bool,
+  type: PropTypes.string,
+  className: PropTypes.string,
+  onClick: PropTypes.func
 }
 
 export default Button
