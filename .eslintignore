@@ -1,0 +1,5 @@
+.cache
+.storybook
+node_modules
+public
+gatsby-config.js
