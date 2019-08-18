@@ -27,6 +27,8 @@
     "@storybook/addons": "^5.0.1",
     "@storybook/cli": "^5.0.1",
     "@storybook/react": "^5.0.1",
+    "eslint": "^6.1.0",
+    "eslint-plugin-react": "^7.14.3",
     "prettier": "^1.17.1"
   },
   "keywords": [
@@ -38,6 +40,7 @@
     "build-storybook": "build-storybook",
     "develop": "gatsby develop && yarn storybook",
     "format": "prettier --write src/**/*.{js,jsx}",
+    "lint": "eslint -c ./config/.eslintrc.js . --ext .js --fix && echo ' > finished linting ✅🔥'", 
     "serve": "gatsby serve",
     "start": "npm run develop",
     "storybook": "start-storybook -p 8008",
