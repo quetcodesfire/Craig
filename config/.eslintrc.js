@@ -35,6 +35,13 @@ module.exports = {
 		'semi': [
 			1,
 			'never'
+		],
+		'no-warning-comments': [
+      'warn',
+      {
+        terms: ['todo', 'fixme'],
+        location: 'start',
+      },
 		]
 	}
 }
