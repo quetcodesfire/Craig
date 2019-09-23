@@ -44,7 +44,7 @@ const Button = ({
   )
  } else {
   buttonTag = (
-   <button {...attributes} {...props}>
+   <button to={to} {...attributes} {...props}>
     {children}
    </button>
   )

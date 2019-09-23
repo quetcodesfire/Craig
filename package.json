@@ -5,6 +5,8 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "babel-loader": "^8.0.6",
+    "babel-preset-gatsby": "^0.2.14",
     "gatsby": "^2.7.1",
     "gatsby-image": "^2.1.1",
     "gatsby-plugin-manifest": "^2.1.1",
@@ -16,7 +18,7 @@
     "gatsby-transformer-sharp": "^2.1.19",
     "node-sass": "^4.12.0",
     "prop-types": "^15.7.2",
-    "react": "^16.8.6",
+    "react": "^16.9.0",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "sass": "^1.20.1"
@@ -27,8 +29,12 @@
     "@storybook/addons": "^5.0.1",
     "@storybook/cli": "^5.0.1",
     "@storybook/react": "^5.0.1",
+    "babel-jest": "^24.9.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "eslint": "^6.1.0",
     "eslint-plugin-react": "^7.14.3",
+    "jest": "^24.9.0",
     "prettier": "^1.17.1"
   },
   "keywords": [
@@ -40,11 +46,11 @@
     "build-storybook": "build-storybook",
     "develop": "gatsby develop && yarn storybook",
     "format": "prettier --write src/**/*.{js,jsx}",
-    "lint": "eslint -c ./config/.eslintrc.js . --ext .js --fix && echo ' > finished linting ✅🔥'", 
+    "lint": "eslint -c ./config/.eslintrc.js . --ext .js --fix && echo ' > finished linting ✏️🔥'",
     "serve": "gatsby serve",
     "start": "npm run develop",
     "storybook": "start-storybook -p 8008",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "test": "jest --config ./config/jest.config.js && echo '> Finished testing 📝🔥'"
   },
   "repository": {
     "type": "git",
